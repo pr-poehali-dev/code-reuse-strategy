@@ -216,9 +216,9 @@ const Index = () => {
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-2xl mx-auto">
             <div className="text-center mb-12 space-y-4">
-              <h2 className="text-3xl md:text-5xl font-bold">Оставьте заявку</h2>
+              <h2 className="text-3xl md:text-5xl font-bold">Свяжитесь с нами</h2>
               <p className="text-muted-foreground text-lg">
-                Заполните форму и мы свяжемся с вами в течение 15 минут
+                Оставьте заявку, и мы свяжемся с вами в течение 15 минут
               </p>
             </div>
             <Card className="shadow-xl animate-scale-in">
@@ -226,11 +226,11 @@ const Index = () => {
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="space-y-2">
                     <label htmlFor="name" className="text-sm font-medium">
-                      Ваше имя *
+                      Имя
                     </label>
                     <Input
                       id="name"
-                      placeholder="Иван Иванов"
+                      placeholder="Ваше имя"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       required
@@ -244,7 +244,7 @@ const Index = () => {
                     <Input
                       id="email"
                       type="email"
-                      placeholder="ivan@example.com"
+                      placeholder="your@email.com"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       required
@@ -258,7 +258,7 @@ const Index = () => {
                     <Input
                       id="phone"
                       type="tel"
-                      placeholder="+7 (999) 123-45-67"
+                      placeholder="+7 (___) ___-__-__"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       required
@@ -280,11 +280,7 @@ const Index = () => {
                   </div>
                   <Button type="submit" size="lg" className="w-full text-lg py-6">
                     Отправить заявку
-                    <Icon name="Send" className="ml-2" size={20} />
                   </Button>
-                  <p className="text-xs text-center text-muted-foreground">
-                    Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности
-                  </p>
                 </form>
               </CardContent>
             </Card>
@@ -292,27 +288,55 @@ const Index = () => {
         </div>
       </section>
 
-      <footer className="border-t py-12 bg-primary text-primary-foreground">
+      <footer className="border-t py-16 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <div className="text-center md:text-left">
-              <div className="text-2xl font-bold mb-2">Ваша компания</div>
-              <p className="text-sm opacity-80">Решения для роста вашего бизнеса</p>
+          <div className="grid md:grid-cols-3 gap-12 mb-12">
+            <div>
+              <div className="text-2xl font-bold mb-4">BizGrowth</div>
+              <p className="text-sm opacity-80 leading-relaxed">
+                Помогаем бизнесу расти и развиваться с 2020 года
+              </p>
             </div>
-            <div className="flex gap-6">
-              <a href="#" className="hover:opacity-80 transition-opacity">
-                <Icon name="Mail" size={24} />
-              </a>
-              <a href="#" className="hover:opacity-80 transition-opacity">
-                <Icon name="Phone" size={24} />
-              </a>
-              <a href="#" className="hover:opacity-80 transition-opacity">
-                <Icon name="MapPin" size={24} />
-              </a>
+            <div>
+              <h3 className="font-semibold mb-4">Контакты</h3>
+              <div className="space-y-3 text-sm opacity-80">
+                <div className="flex items-center gap-2">
+                  <Icon name="Phone" size={16} />
+                  <span>+7 (495) 123-45-67</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Icon name="Mail" size={16} />
+                  <span>info@bizgrowth.ru</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Icon name="MapPin" size={16} />
+                  <span>Москва, ул. Примерная, 1</span>
+                </div>
+              </div>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-4">Быстрые ссылки</h3>
+              <div className="space-y-2 text-sm opacity-80">
+                <div><a href="#" className="hover:opacity-100 transition-opacity">Главная</a></div>
+                <div><a href="#" className="hover:opacity-100 transition-opacity">Услуги</a></div>
+                <div><a href="#" className="hover:opacity-100 transition-opacity">О компании</a></div>
+                <div><a href="#" className="hover:opacity-100 transition-opacity">Контакты</a></div>
+              </div>
             </div>
           </div>
-          <div className="mt-8 pt-8 border-t border-primary-foreground/20 text-center text-sm opacity-60">
-            © 2026 Все права защищены
+          <div className="pt-8 border-t border-primary-foreground/20 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div className="text-sm opacity-60">© 2024 BizGrowth. Все права защищены.</div>
+            <div className="flex gap-4">
+              <a href="#" className="hover:opacity-80 transition-opacity" aria-label="Telegram">
+                <Icon name="Send" size={20} />
+              </a>
+              <a href="#" className="hover:opacity-80 transition-opacity" aria-label="VK">
+                <Icon name="Share2" size={20} />
+              </a>
+              <a href="#" className="hover:opacity-80 transition-opacity" aria-label="WhatsApp">
+                <Icon name="MessageCircle" size={20} />
+              </a>
+            </div>
           </div>
         </div>
       </footer>
